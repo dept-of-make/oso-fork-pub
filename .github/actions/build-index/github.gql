@@ -1,0 +1,26 @@
+#~github~
+# Use https://docs.github.com/en/graphql/overview/explorer to develop this.
+
+# Gets all the releases and all the files
+# TODO: Handle pagination of releases
+query GetReleaseFiles($repository_id:ID!) {
+	node(id:$repository_id) {
+    ... on Repository {
+      releases(first:100) {
+        nodes {
+          id
+          name
+          releaseAssets(first:100) {
+            nodes {
+              id
+              name
+              contentType
+              downloadUrl
+              url
+            }
+          }
+        }
+      }
+    }
+  }
+}

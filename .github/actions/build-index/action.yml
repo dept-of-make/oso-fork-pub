@@ -1,0 +1,12 @@
+name: 'Static Index'
+description: 'Makes a static index'
+inputs:
+  repository_id:
+    description: 'Node ID of the repository'
+    required: true
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+  env:
+    REPOSITORY_ID: ${{ inputs.repository_id }}
+    GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
