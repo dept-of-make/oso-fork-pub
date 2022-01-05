@@ -1,8 +1,7 @@
 #!/usr/bin/env xonsh
-source /etc/xonshrc
-
+import sys
+print(sys.path)
 from github import GetReleaseFiles
-
 
 def iter_artifacts():
     """
