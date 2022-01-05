@@ -1,0 +1,21 @@
+name: build
+
+on:
+  push: {}
+  schedule:
+  - cron: "0 0 * * *"
+
+permissions:
+  contents: write
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v1
+        with:
+          fetch-depth: 1
+      - uses: dept-of-make/oso-fork-pub@trunk
+        with:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          REPOSITORY_ID: "R_kgDOGoVw9Q" # dept-of-make/oso
