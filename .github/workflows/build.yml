@@ -15,7 +15,7 @@ jobs:
       - uses: actions/checkout@v1
         with:
           fetch-depth: 1
-      - uses: dept-of-make/oso-fork-pub@trunk
+      - uses: ./.github/actions/build-index
         with:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           REPOSITORY_ID: "R_kgDOGoVw9Q" # dept-of-make/oso
