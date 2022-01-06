@@ -18,4 +18,5 @@ jobs:
       - uses: ./.github/actions/build-index
         with:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          REPOSITORY_ID: "R_kgDOGoVw9Q" # dept-of-make/oso
+          # REPOSITORY: "dept-of-make/oso"
+          # REPOSITORY: "osohq/oso"

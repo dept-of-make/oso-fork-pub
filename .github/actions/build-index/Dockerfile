@@ -1,6 +1,7 @@
 FROM xonsh/action
-RUN xpip install gqlmod gqlmod-github
+RUN xpip install PyGithub
 
 COPY . /cmd
+ENV PYTHONPATH=/cmd
 
 CMD ["/cmd/build.xsh"]

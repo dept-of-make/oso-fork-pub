@@ -1,15 +1,15 @@
 #!/usr/bin/env xonsh
-import sys
-print(sys.path)
-from github import GetReleaseFiles
+
 
 def iter_artifacts():
     """
     Generates the URLs to each artifact the repository has
     """
-    # Big Ol' Blob
-    bob = GetReleaseFiles(repository_id=$REPOSITORY_ID)
-    print(bob)
+    for repo in $GITHUB.get_repo($REPOSITORY):
+        for release in repo.get_releases():
+            for asset in release.get_assets():
+                print(asset)
+
     yield from ()
 
 
